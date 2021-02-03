@@ -78,9 +78,6 @@ class SetUp {
         return this.map;
     }
 
-    getDifficulty() {
-        return this.difficulty;
-    }
 }
 
 
