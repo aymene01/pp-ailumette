@@ -4,11 +4,11 @@ const Player = require("./Players/Player");
 const AI = require("./Players/AI");
 
 class Game {
-    constructor(tray) {
+    constructor(setUp) {
         this.number = 0;
         this.players = [new Player(), new AI()];
-        this.messages = new ErrorMessages(tray);
-        this.tray = tray;
+        this.messages = new ErrorMessages(setUp);
+        this.setUp = setUp;
 
         console.log("-----------------------------------------------")
         console.log(" Players: " + this.players.map(i => i.getName()).join(', '))
@@ -24,7 +24,7 @@ class Game {
 
     end(winners) {
         console.log("------------")
-        console.log(winners.getName() + " lose");
+        console.log(winners + " lose");
         console.log("Game finish in " + this.number + " rounds");
         console.log("------------")
     }
@@ -34,7 +34,7 @@ class Game {
     }
 
     getTray() {
-        return this.tray;
+        return this.setUp;
     }
 }
 
